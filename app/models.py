@@ -75,13 +75,13 @@ class IncomeType(models.Model):
         ordering = ['id']
 
 
-class Balance(models.Model):
-    id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    status = models.CharField(max_length=100, blank=True)
-    amount = models.DecimalField(max_digits=100, decimal_places=4, default=0)
-    update_time = models.DateTimeField(default=datetime.now, blank=True)
-    created_time = models.DateTimeField(default=datetime.now, blank=True)
-
-    class Meta:
-        ordering = ['id']
+# class Balance(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+#     status = models.CharField(max_length=100, blank=True)
+#     amount = models.DecimalField(max_digits=100, decimal_places=4, default=0)
+#     update_time = models.DateTimeField(default=datetime.now, blank=True)
+#     created_time = models.DateTimeField(default=datetime.now, blank=True)
+#
+#     class Meta:
+#         ordering = ['id']

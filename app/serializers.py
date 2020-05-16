@@ -20,10 +20,10 @@ class IncomeSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class BalanceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Balance
-        fields = '__all__'
+# class BalanceSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.Balance
+#         fields = '__all__'
 
 
 class IncomeTypeSerializer(serializers.ModelSerializer):

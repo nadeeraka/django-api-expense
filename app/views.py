@@ -8,7 +8,7 @@ from rest_framework import filters, pagination
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import status
-from app.models import Expense, Income, Balance
+from app.models import Expense, Income
 import functools
 
 
@@ -44,12 +44,12 @@ class IncomeViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
-class BalanceViewSet(viewsets.ModelViewSet):
-    queryset = Balance.objects.all()
-    serializer_class = serializers.BalanceSerializer
-    # permission_classes = [IsAuthenticated]
-    permission_classes = (permissions.AllowAny,)
-    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+# class BalanceViewSet(viewsets.ModelViewSet):
+#     queryset = Balance.objects.all()
+#     serializer_class = serializers.BalanceSerializer
+#     # permission_classes = [IsAuthenticated]
+#     permission_classes = (permissions.AllowAny,)
+#     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
 # @action(detail=True, methods=['get'])
@@ -57,18 +57,6 @@ class BalanceViewSet(viewsets.ModelViewSet):
 #     income = Income.object.amount
 #     print(income)
 #     return Response(data='success', status=status.HTTP_200_OK)
-
-@api_view(['GET'])
-def get_balance(self):
-    # serializer = serializers.UserSerializer(request.user)
-    # serializer = serializers.ExpenseSerializer
-    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')  # get only one field in list
-    incomeArray = Income.objects.values_list('amount', flat=True)
-    try:
-        balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
-    except Exception as e:
-        return Response(data=expenseArray, status=status.HTTP_400_BAD_REQUEST)
-    return Response(data={"amount":balance}, status=status.HTTP_200_OK)
 
 
 class IncomeTypeViewSet(viewsets.ModelViewSet):
@@ -85,3 +73,26 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
+@api_view(['GET'])
+def get_balance(self):
+    # serializer = serializers.UserSerializer(request.user)
+    # serializer = serializers.ExpenseSerializer
+    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')  # get only one field in list
+    incomeArray = Income.objects.values_list('amount', flat=True)
+    try:
+        balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+    return Response(data={"amount": balance}, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_expense(self):
+    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')
+    try:
+        expense = functools.reduce(lambda a, b: a + b, expenseArray)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+    return Response(data={"amount": expense}, status=status.HTTP_200_OK)
