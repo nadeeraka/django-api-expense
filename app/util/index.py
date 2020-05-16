@@ -1,3 +1,5 @@
+import sys
+
 def getLowerstVal(array):
     if array not in locals():
         return -1
@@ -23,3 +25,5 @@ def getAva(array):
         return -1
     if getCount(array)>0:
         return getCount(array)/len(array)
+
+
