@@ -18,5 +18,6 @@ urlpatterns = [
     path('ba', views.get_balance),
     path('ex', views.get_expense),
     path('h_ex', views.get_higest_Expense),
-    path('ava_ex', views.get_ava_ex)
+    path('ava_ex', views.get_ava_ex),
+    path('graph', views.analyze)
 ]

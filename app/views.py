@@ -72,7 +72,7 @@ def get_balance(request):
 
 @api_view(['GET'])
 def get_expense(request):
-    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True).order_by('id')
+    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
     try:
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
     except Exception as e:
@@ -89,11 +89,18 @@ def get_higest_Expense(request):
             value = i
     return Response(data={"amount": value}, status=status.HTTP_200_OK)
 
-
+#TODO this code has bug the avarage is wrong
 @api_view(['GET'])
 def get_ava_ex(request):
     ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
-    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
+    amount = functools.reduce(lambda a,b:a+b,ex)
+    try:
+        if len(ex)>0:
+            val = amount/len(ex)
+            return Response(data={"amount": val}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 # get all expenses @ given range
@@ -109,7 +116,9 @@ def get_ex_filter_by_given_date(request):
 
 @api_view(['GET'])
 def analyze(request):
-    pass
+    querySet = Expense.objects.filter(id =request.user.id).values_list('amount','expense_type')
+    print(querySet)
+    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
 
 # class BalanceViewSet(viewsets.ModelViewSet):
