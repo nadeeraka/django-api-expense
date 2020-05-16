@@ -9,6 +9,8 @@ from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import status
 from app.models import Expense, Income, Balance
+import functools
+
 
 
 # Create your views here.
@@ -59,12 +61,23 @@ class BalanceViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(self):
+    def getCount(array):
+        count = 0
+        for i in array:
+            count += i
+        return count
     # serializer = serializers.UserSerializer(request.user)
     # serializer = serializers.ExpenseSerializer
-    expense = Expense.objects.values_list('amount', flat=True) #get only one field in list
-    print(expense)
+    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id') #get only one field in list
+    incomeArray = Income.objects.values_list('amount',flat=True)
+
+    #print('count',balance)
+    try:
+        balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
+    except Exception as e: return Response(data=expenseArray, status=status.HTTP_400_BAD_REQUEST)
+
     # data = serializers.serialize('json', self.get_queryset())
-    return Response(data=expense, status=status.HTTP_200_OK)
+    return Response(data=balance, status=status.HTTP_200_OK)
 
 
 class IncomeTypeViewSet(viewsets.ModelViewSet):
