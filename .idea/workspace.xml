@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589642103087</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="views models urls update">
+      <created>1589643149516</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589643149516</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,9 +146,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="views models urls update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589642102865">
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589643149304">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589642102865" />
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589643149304" />
   </component>
 </project>

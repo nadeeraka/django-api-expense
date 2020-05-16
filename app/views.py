@@ -28,13 +28,6 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
-    @action(detail=True, methods=['get'])
-    def delT(self, request, *args, **kwargs):
-        # print(self.request.user)
-        # id = request.data['id']
-        # print(id)
-        return Response(data='success', status=status.HTTP_200_OK)
-
 
 class IncomeViewSet(viewsets.ModelViewSet):
     queryset = Income.objects.all()
@@ -84,7 +77,7 @@ def get_expense(request):
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
-    return Response(data={"amount": expense}, status=status.HTTP_200_OK)
+    return Response(data={"amount": expense, }, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
@@ -102,6 +95,18 @@ def get_ava_ex(request):
     ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
+
+# get all expenses @ given range
+#TODO
+@api_view(['POST'])
+def get_ex_filter_by_given_date(request):
+    try:
+        data = request.data['time_range']
+    except Exception as e:
+        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()
 #     serializer_class = serializers.BalanceSerializer
@@ -115,3 +120,10 @@ def get_ava_ex(request):
 #     income = Income.object.amount
 #     print(income)
 #     return Response(data='success', status=status.HTTP_200_OK)
+
+# @action(detail=True, methods=['get'])
+    # def delT(self, request, *args, **kwargs):
+    #     # print(self.request.user)
+    #     # id = request.data['id']
+    #     # print(id)
+    #     return Response(data='success', status=status.HTTP_200_OK)
