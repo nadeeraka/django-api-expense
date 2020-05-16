@@ -28,13 +28,6 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
-    @action(detail=True, methods=['get'])
-    def delT(self, request, *args, **kwargs):
-        # print(self.request.user)
-        # id = request.data['id']
-        # print(id)
-        return Response(data='success', status=status.HTTP_200_OK)
-
 
 class IncomeViewSet(viewsets.ModelViewSet):
     queryset = Income.objects.all()
@@ -42,21 +35,6 @@ class IncomeViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
-
-
-# class BalanceViewSet(viewsets.ModelViewSet):
-#     queryset = Balance.objects.all()
-#     serializer_class = serializers.BalanceSerializer
-#     # permission_classes = [IsAuthenticated]
-#     permission_classes = (permissions.AllowAny,)
-#     pagination.PageNumberPagination.page_size_query_param = 'page_size'
-
-
-# @action(detail=True, methods=['get'])
-# def get(self, request, *args, **kwargs):
-#     income = Income.object.amount
-#     print(income)
-#     return Response(data='success', status=status.HTTP_200_OK)
 
 
 class IncomeTypeViewSet(viewsets.ModelViewSet):
@@ -77,14 +55,18 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(request):
-    # serializer = serializers.UserSerializer(request.user)
-    # serializer = serializers.ExpenseSerializer
-    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True).order_by('id')  # get only one field in list
+    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount',
+                                                                          flat=True)  # get only one field in list
     incomeArray = Income.objects.filter(id=request.user.id).values_list('amount', flat=True)
     try:
-        balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
+        income = functools.reduce(lambda a, b: a + b, incomeArray)
+        expense = functools.reduce(lambda a, b: a + b, expenseArray)
+        if income > expense:
+            balance = income - expense
+        else:
+            return Response(data={"massage": "not sufficient income"}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
-        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": balance}, status=status.HTTP_200_OK)
 
 
@@ -95,7 +77,7 @@ def get_expense(request):
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
-    return Response(data={"amount": expense}, status=status.HTTP_200_OK)
+    return Response(data={"amount": expense, }, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
@@ -107,9 +89,46 @@ def get_higest_Expense(request):
             value = i
     return Response(data={"amount": value}, status=status.HTTP_200_OK)
 
+
 @api_view(['GET'])
 def get_ava_ex(request):
     ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
-    print('ex',ex)
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
+
+# get all expenses @ given range
+#TODO
+@api_view(['POST'])
+def get_ex_filter_by_given_date(request):
+    try:
+        data = request.data['time_range']
+    except Exception as e:
+        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+
+#graph data
+
+@api_view(['GET'])
+def analyze(request):
+    pass
+
+
+# class BalanceViewSet(viewsets.ModelViewSet):
+#     queryset = Balance.objects.all()
+#     serializer_class = serializers.BalanceSerializer
+#     # permission_classes = [IsAuthenticated]
+#     permission_classes = (permissions.AllowAny,)
+#     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
+# @action(detail=True, methods=['get'])
+# def get(self, request, *args, **kwargs):
+#     income = Income.object.amount
+#     print(income)
+#     return Response(data='success', status=status.HTTP_200_OK)
+
+# @action(detail=True, methods=['get'])
+    # def delT(self, request, *args, **kwargs):
+    #     # print(self.request.user)
+    #     # id = request.data['id']
+    #     # print(id)
+    #     return Response(data='success', status=status.HTTP_200_OK)
