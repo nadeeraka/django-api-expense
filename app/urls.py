@@ -3,7 +3,7 @@ from app import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'todos', views.TodoViewSet)
+router.register(r'expense', views.ExpenseViewSet)
 
 
 
