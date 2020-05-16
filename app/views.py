@@ -64,15 +64,11 @@ def get_balance(self):
     # serializer = serializers.ExpenseSerializer
     expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')  # get only one field in list
     incomeArray = Income.objects.values_list('amount', flat=True)
-
-    # print('count',balance)
     try:
         balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
     except Exception as e:
         return Response(data=expenseArray, status=status.HTTP_400_BAD_REQUEST)
-
-    # data = serializers.serialize('json', self.get_queryset())
-    return Response(data=balance, status=status.HTTP_200_OK)
+    return Response(data={"amount":balance}, status=status.HTTP_200_OK)
 
 
 class IncomeTypeViewSet(viewsets.ModelViewSet):
