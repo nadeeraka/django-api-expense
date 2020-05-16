@@ -76,11 +76,11 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 
 
 @api_view(['GET'])
-def get_balance(self):
+def get_balance(request):
     # serializer = serializers.UserSerializer(request.user)
     # serializer = serializers.ExpenseSerializer
-    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')  # get only one field in list
-    incomeArray = Income.objects.values_list('amount', flat=True)
+    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True).order_by('id')  # get only one field in list
+    incomeArray = Income.objects.filter(id=request.user.id).values_list('amount', flat=True)
     try:
         balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
     except Exception as e:
@@ -89,8 +89,8 @@ def get_balance(self):
 
 
 @api_view(['GET'])
-def get_expense(self):
-    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')
+def get_expense(request):
+    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True).order_by('id')
     try:
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
     except Exception as e:
@@ -99,10 +99,17 @@ def get_expense(self):
 
 
 @api_view(['GET'])
-def get_higest_Expense(self):
+def get_higest_Expense(request):
     value = 0
-    ex = Expense.objects.values_list('amount', flat=True)
+    ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
     for i in ex:
         if value < i:
             value = i
     return Response(data={"amount": value}, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def get_ava_ex(request):
+    ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
+    print('ex',ex)
+    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
+

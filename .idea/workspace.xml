@@ -110,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589636656312</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="views models urls update">
+      <created>1589640831281</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589640831281</updated>
+    </task>
+    <task id="LOCAL-00011" summary="views models urls update">
+      <created>1589640859121</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1589640859121</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -119,9 +133,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="views models urls update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589640831014">
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589640858900">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589640831014" />
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589640858900" />
   </component>
 </project>
