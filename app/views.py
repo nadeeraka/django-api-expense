@@ -12,7 +12,6 @@ from app.models import Expense, Income, Balance
 import functools
 
 
-
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = models.User.objects.all()
@@ -61,20 +60,16 @@ class BalanceViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(self):
-    def getCount(array):
-        count = 0
-        for i in array:
-            count += i
-        return count
     # serializer = serializers.UserSerializer(request.user)
     # serializer = serializers.ExpenseSerializer
-    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id') #get only one field in list
-    incomeArray = Income.objects.values_list('amount',flat=True)
+    expenseArray = Expense.objects.values_list('amount', flat=True).order_by('id')  # get only one field in list
+    incomeArray = Income.objects.values_list('amount', flat=True)
 
-    #print('count',balance)
+    # print('count',balance)
     try:
         balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
-    except Exception as e: return Response(data=expenseArray, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as e:
+        return Response(data=expenseArray, status=status.HTTP_400_BAD_REQUEST)
 
     # data = serializers.serialize('json', self.get_queryset())
     return Response(data=balance, status=status.HTTP_200_OK)
