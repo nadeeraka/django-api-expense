@@ -27,3 +27,8 @@ def getAva(array):
         return getCount(array)/len(array)
 
 
+def countUniqe(array):
+    for i in array:
+        pass
+
+

@@ -66,7 +66,7 @@ def get_balance(request):
         else:
             return Response(data={"massage": "not sufficient income"}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
-        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"massage": "bad request", "error": e}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": balance}, status=status.HTTP_200_OK)
 
 
@@ -89,37 +89,36 @@ def get_higest_Expense(request):
             value = i
     return Response(data={"amount": value}, status=status.HTTP_200_OK)
 
-#TODO this code has bug the avarage is wrong
+
+# TODO this code has bug the avarage is wrong
 @api_view(['GET'])
 def get_ava_ex(request):
     ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
-    amount = functools.reduce(lambda a,b:a+b,ex)
     try:
-        if len(ex)>0:
-            val = amount/len(ex)
+        amount = functools.reduce(lambda a, b: a + b, ex)
+        if len(ex) > 0:
+            val = amount / len(ex)
             return Response(data={"amount": val}, status=status.HTTP_200_OK)
-    except Exception as e:
-        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
-
+    except:
+        return Response(data={"massage": "bad request" }, status=status.HTTP_400_BAD_REQUEST)
 
 
 # get all expenses @ given range
-#TODO
+# TODO
 @api_view(['POST'])
 def get_ex_filter_by_given_date(request):
     try:
         data = request.data['time_range']
     except Exception as e:
-        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"massage": "bad request", "error": e}, status=status.HTTP_400_BAD_REQUEST)
 
-#graph data
+
+# graph data
 
 @api_view(['GET'])
 def analyze(request):
-    querySet = Expense.objects.filter(id =request.user.id).values_list('amount','expense_type')
-    print(querySet)
+    querySet = Expense.objects.filter(id=request.user.id).values_list('amount', 'expense_type')
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
-
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()
@@ -136,8 +135,8 @@ def analyze(request):
 #     return Response(data='success', status=status.HTTP_200_OK)
 
 # @action(detail=True, methods=['get'])
-    # def delT(self, request, *args, **kwargs):
-    #     # print(self.request.user)
-    #     # id = request.data['id']
-    #     # print(id)
-    #     return Response(data='success', status=status.HTTP_200_OK)
+# def delT(self, request, *args, **kwargs):
+#     # print(self.request.user)
+#     # id = request.data['id']
+#     # print(id)
+#     return Response(data='success', status=status.HTTP_200_OK)
