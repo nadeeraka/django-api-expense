@@ -35,7 +35,6 @@ class ExpenseViewSet(viewsets.ModelViewSet):
         return Response(data='success', status=status.HTTP_200_OK)
 
 
-
 class IncomeViewSet(viewsets.ModelViewSet):
     queryset = Income.objects.all()
     serializer_class = serializers.IncomeSerializer
@@ -60,11 +59,13 @@ class BalanceViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(self):
-       #serializer = serializers.UserSerializer(request.user)
-    serializer = serializers.ExpenseSerializer
-    print(serializer.data)
-    #data = serializers.serialize('json', self.get_queryset())
-    return Response(data='success', status=status.HTTP_200_OK)
+    # serializer = serializers.UserSerializer(request.user)
+    # serializer = serializers.ExpenseSerializer
+    expense = Expense.objects.values_list('amount', flat=True) #get only one field in list
+    print(expense)
+    # data = serializers.serialize('json', self.get_queryset())
+    return Response(data=expense, status=status.HTTP_200_OK)
+
 
 class IncomeTypeViewSet(viewsets.ModelViewSet):
     queryset = models.IncomeType.objects.all()
