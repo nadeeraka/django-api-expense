@@ -27,6 +27,14 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
+    @action(detail=True, methods=['get'])
+    def delT(self, request, *args, **kwargs):
+        # print(self.request.user)
+        # id = request.data['id']
+        # print(id)
+        return Response(data='success', status=status.HTTP_200_OK)
+
+
 
 class IncomeViewSet(viewsets.ModelViewSet):
     queryset = Income.objects.all()
@@ -44,7 +52,19 @@ class BalanceViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
+# @action(detail=True, methods=['get'])
+# def get(self, request, *args, **kwargs):
+#     income = Income.object.amount
+#     print(income)
+#     return Response(data='success', status=status.HTTP_200_OK)
 
+@api_view(['GET'])
+def get_balance(self):
+       #serializer = serializers.UserSerializer(request.user)
+    serializer = serializers.ExpenseSerializer
+    print(serializer.data)
+    #data = serializers.serialize('json', self.get_queryset())
+    return Response(data='success', status=status.HTTP_200_OK)
 
 class IncomeTypeViewSet(viewsets.ModelViewSet):
     queryset = models.IncomeType.objects.all()
