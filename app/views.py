@@ -66,7 +66,7 @@ def get_balance(request):
         else:
             return Response(data={"massage": "not sufficient income"}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
-        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": balance}, status=status.HTTP_200_OK)
 
 
@@ -105,6 +105,11 @@ def get_ex_filter_by_given_date(request):
     except Exception as e:
         return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
 
+#graph data
+
+@api_view(['GET'])
+def analyze(request):
+    pass
 
 
 # class BalanceViewSet(viewsets.ModelViewSet):
