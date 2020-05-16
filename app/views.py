@@ -44,6 +44,8 @@ class BalanceViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
+
+
 class IncomeTypeViewSet(viewsets.ModelViewSet):
     queryset = models.IncomeType.objects.all()
     serializer_class = serializers.IncomeTypeSerializer

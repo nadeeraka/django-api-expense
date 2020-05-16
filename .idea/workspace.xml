@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589614590787</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="views models urls update">
+      <created>1589615860094</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589615860094</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -64,9 +68,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="views models urls update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589614590438">
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589615859805">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589614590438" />
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589615859805" />
   </component>
 </project>
