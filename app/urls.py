@@ -15,6 +15,7 @@ router.register(r'incomeType', views.IncomeTypeViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     # path('taktTime/', views.TaktTimeView.as_view()),
-    path('get_balance', views.get_balance),
-    path('get_expense', views.get_expense)
+    path('get_ba', views.get_balance),
+    path('get_ex', views.get_expense),
+    path('h_ex', views.get_higest_Expense)
 ]

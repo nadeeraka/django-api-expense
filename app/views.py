@@ -96,3 +96,13 @@ def get_expense(self):
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": expense}, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_higest_Expense(self):
+    value = 0
+    ex = Expense.objects.values_list('amount', flat=True)
+    for i in ex:
+        if value < i:
+            value = i
+    return Response(data={"amount": value}, status=status.HTTP_200_OK)
