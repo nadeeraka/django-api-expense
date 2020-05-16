@@ -44,21 +44,6 @@ class IncomeViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
-# class BalanceViewSet(viewsets.ModelViewSet):
-#     queryset = Balance.objects.all()
-#     serializer_class = serializers.BalanceSerializer
-#     # permission_classes = [IsAuthenticated]
-#     permission_classes = (permissions.AllowAny,)
-#     pagination.PageNumberPagination.page_size_query_param = 'page_size'
-
-
-# @action(detail=True, methods=['get'])
-# def get(self, request, *args, **kwargs):
-#     income = Income.object.amount
-#     print(income)
-#     return Response(data='success', status=status.HTTP_200_OK)
-
-
 class IncomeTypeViewSet(viewsets.ModelViewSet):
     queryset = models.IncomeType.objects.all()
     serializer_class = serializers.IncomeTypeSerializer
@@ -77,12 +62,16 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(request):
-    # serializer = serializers.UserSerializer(request.user)
-    # serializer = serializers.ExpenseSerializer
-    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True).order_by('id')  # get only one field in list
+    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount',
+                                                                          flat=True)  # get only one field in list
     incomeArray = Income.objects.filter(id=request.user.id).values_list('amount', flat=True)
     try:
-        balance = functools.reduce(lambda a, b: a + b, incomeArray) - functools.reduce(lambda a, b: a + b, expenseArray)
+        income = functools.reduce(lambda a, b: a + b, incomeArray)
+        expense = functools.reduce(lambda a, b: a + b, expenseArray)
+        if income > expense:
+            balance = income - expense
+        else:
+            return Response(data={"massage": "not sufficient income"}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": balance}, status=status.HTTP_200_OK)
@@ -107,9 +96,22 @@ def get_higest_Expense(request):
             value = i
     return Response(data={"amount": value}, status=status.HTTP_200_OK)
 
+
 @api_view(['GET'])
 def get_ava_ex(request):
     ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
-    print('ex',ex)
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
+# class BalanceViewSet(viewsets.ModelViewSet):
+#     queryset = Balance.objects.all()
+#     serializer_class = serializers.BalanceSerializer
+#     # permission_classes = [IsAuthenticated]
+#     permission_classes = (permissions.AllowAny,)
+#     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
+# @action(detail=True, methods=['get'])
+# def get(self, request, *args, **kwargs):
+#     income = Income.object.amount
+#     print(income)
+#     return Response(data='success', status=status.HTTP_200_OK)
