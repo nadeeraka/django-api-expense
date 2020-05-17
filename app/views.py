@@ -98,7 +98,6 @@ def get_higest_Expense(request):
     return Response(data={"amount": value}, status=status.HTTP_200_OK)
 
 
-# TODO this code has bug the avarage is wrong
 @api_view(['GET'])
 def get_ava_ex(request):
     ex = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
@@ -122,12 +121,18 @@ def get_ex_filter_by_given_date(request):
 
 
 # graph data
-
+#TODO
 @api_view(['GET'])
 def analyze(request):
 
-    typeIdSet = Expense.objects.filter(user_id=request.user.id).values_list('expense_type',flat=True)
-    print(typeIdSet)
+
+
+    typeIdSet = list(Expense.objects.filter(user_id=request.user.id).values_list('expense_type',flat=True))
+    uniqeval = set(typeIdSet)
+    for i in uniqeval:
+        Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
+
+    print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
 # class BalanceViewSet(viewsets.ModelViewSet):

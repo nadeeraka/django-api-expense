@@ -172,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589692670583</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="helpers add">
+      <created>1589709562177</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589709562177</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,10 +190,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="helpers add" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589692670317">
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589709560781">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589692670317" />
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589709560781" />
     <state x="350" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1589702776644">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
