@@ -125,8 +125,9 @@ def get_ex_filter_by_given_date(request):
 
 @api_view(['GET'])
 def analyze(request):
-    print(request.user)
-    querySet = Expense.objects.filter(user_id=request.user.id).values_list('amount', 'expense_type')
+
+    typeIdSet = Expense.objects.filter(user_id=request.user.id).values_list('expense_type',flat=True)
+    print(typeIdSet)
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
 # class BalanceViewSet(viewsets.ModelViewSet):
