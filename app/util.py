@@ -1,6 +1,5 @@
 import sys
 
-
 def getLowerstVal(array):
     if array not in locals():
         return -1
@@ -10,25 +9,26 @@ def getLowerstVal(array):
             val = i
         return i
 
-
-# get all count
+#get all count
 def getCount(array):
     if array not in locals():
         return -1
     count = 0
     for i in array:
-        count += i
+        count +=i
     return count
 
 
-# get avarage
+#get avarage
 def getAva(array):
     if array not in locals():
         return -1
-    if getCount(array) > 0:
-        return getCount(array) / len(array)
+    if getCount(array)>0:
+        return getCount(array)/len(array)
 
 
 def countUniqe(array):
     for i in array:
         pass
+
+
