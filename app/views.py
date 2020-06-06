@@ -31,7 +31,7 @@ class ExpenseViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['GET'])
     def test(self, request, pk=None, *args, **kwargs):
-        #ex = Expense.objects.filter(id=)
+        # ex = Expense.objects.filter(id=)
         print(self.request.user)
         return Response(data='ok')
 
@@ -63,7 +63,7 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 @api_view(['GET'])
 def get_balance(request):
     expenseArray = Expense.objects.filter(user_id=request.user.id).values_list('amount',
-                                                                          flat=True)  # get only one field in list
+                                                                               flat=True)  # get only one field in list
     print(expenseArray)
     incomeArray = Income.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
     try:
@@ -107,7 +107,7 @@ def get_ava_ex(request):
             val = amount / len(ex)
             return Response(data={"amount": val}, status=status.HTTP_200_OK)
     except:
-        return Response(data={"massage": "bad request" }, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 # get all expenses @ given range
@@ -121,13 +121,10 @@ def get_ex_filter_by_given_date(request):
 
 
 # graph data
-#TODO
+# TODO
 @api_view(['GET'])
 def analyze(request):
-
-
-
-    typeIdSet = list(Expense.objects.filter(user_id=request.user.id).values_list('expense_type',flat=True))
+    typeIdSet = list(Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True))
     uniqeval = set(typeIdSet)
     for i in uniqeval:
         Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
