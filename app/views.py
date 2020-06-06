@@ -62,8 +62,8 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(request):
-    expenseArray = Expense.objects.filter(user_id=request.user.id).values_list('amount',
-                                                                               flat=True)  # get only one field in list
+    expenseArray = Expense.objects.filter(user_id=request.user.id) \
+        .values_list('amount', flat=True)  # get only one field in list
     print(expenseArray)
     incomeArray = Income.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
     try:
@@ -80,9 +80,9 @@ def get_balance(request):
 
 @api_view(['GET'])
 def get_expense(request):
-    expenseArray = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
+    expense_array = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
     try:
-        expense = functools.reduce(lambda a, b: a + b, expenseArray)
+        expense = functools.reduce(lambda a, b: a + b, expense_array)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": expense, }, status=status.HTTP_200_OK)
