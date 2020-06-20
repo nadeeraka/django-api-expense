@@ -125,16 +125,31 @@ def get_ex_filter_by_given_date(request):
 @api_view(['GET'])
 def analyze(request):
     typeIdSet = list(Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True))
-    uniqeval = set(typeIdSet)
-    for i in uniqeval:
-        Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
+    # uniqeval = set(typeIdSet)
+    # for i in uniqeval:
+    #     Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
 
     print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
 
-
 # balance
+class Balance(APIView):
+    def get(self):
+        expenseArray = Expense.objects.filter(user_id=self.user.id) \
+            .values_list('amount', flat=True)  # get only one field in list
+        print(expenseArray)
+        incomeArray = Income.objects.filter(user_id=self.user.id).values_list('amount', flat=True)
+        try:
+            income = functools.reduce(lambda a, b: a + b, incomeArray)
+            expense = functools.reduce(lambda a, b: a + b, expenseArray)
+            if income > expense:
+                balance = income - expense
+            else:
+                return Response(data={"massage": "not sufficient income"}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response(data={"massage": "bad request", "error": e}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"amount": balance}, status=status.HTTP_200_OK)
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()

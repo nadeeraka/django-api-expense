@@ -8,12 +8,13 @@ router.register(r'expense', views.ExpenseViewSet)
 router.register(r'expenseType', views.ExpenseTypeViewSet)
 router.register(r'income', views.IncomeViewSet)
 router.register(r'incomeType', views.IncomeTypeViewSet)
-#router.register(r'balance', views.BalanceViewSet)
+
 # router.register(r'getBalance', views.get_balance.)
 
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('balance', views.Balance.as_view()),
     # path('taktTime/', views.TaktTimeView.as_view()),
     path('ba', views.get_balance),
     path('ex', views.get_expense),
