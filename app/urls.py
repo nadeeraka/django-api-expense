@@ -3,7 +3,7 @@ from app import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-# router.register(r'user', views.UserViewSet)
+router.register(r'user', views.UserViewSet)
 router.register(r'expense', views.ExpenseViewSet)
 router.register(r'expenseType', views.ExpenseTypeViewSet)
 router.register(r'income', views.IncomeViewSet)
@@ -18,5 +18,6 @@ urlpatterns = [
     path('ba', views.get_balance),
     path('ex', views.get_expense),
     path('h_ex', views.get_higest_Expense),
-    path('ava_ex', views.get_ava_ex)
+    path('ava_ex', views.get_ava_ex),
+    path('graph', views.analyze)
 ]

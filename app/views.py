@@ -10,6 +10,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from app.models import Expense, Income
 import functools
+from app.util.index import getAva
 
 
 # Create your views here.
@@ -27,6 +28,12 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+    @action(detail=True, methods=['GET'])
+    def test(self, request, pk=None, *args, **kwargs):
+        # ex = Expense.objects.filter(id=)
+        print(self.request.user)
+        return Response(data='ok')
 
 
 class IncomeViewSet(viewsets.ModelViewSet):
@@ -55,9 +62,10 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def get_balance(request):
-    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount',
-                                                                          flat=True)  # get only one field in list
-    incomeArray = Income.objects.filter(id=request.user.id).values_list('amount', flat=True)
+    expenseArray = Expense.objects.filter(user_id=request.user.id) \
+        .values_list('amount', flat=True)  # get only one field in list
+    print(expenseArray)
+    incomeArray = Income.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
     try:
         income = functools.reduce(lambda a, b: a + b, incomeArray)
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
@@ -66,15 +74,15 @@ def get_balance(request):
         else:
             return Response(data={"massage": "not sufficient income"}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
-        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"massage": "bad request", "error": e}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": balance}, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 def get_expense(request):
-    expenseArray = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True).order_by('id')
+    expense_array = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
     try:
-        expense = functools.reduce(lambda a, b: a + b, expenseArray)
+        expense = functools.reduce(lambda a, b: a + b, expense_array)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
     return Response(data={"amount": expense, }, status=status.HTTP_200_OK)
@@ -83,7 +91,7 @@ def get_expense(request):
 @api_view(['GET'])
 def get_higest_Expense(request):
     value = 0
-    ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
+    ex = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
     for i in ex:
         if value < i:
             value = i
@@ -92,25 +100,41 @@ def get_higest_Expense(request):
 
 @api_view(['GET'])
 def get_ava_ex(request):
-    ex = Expense.objects.filter(id=request.user.id).values_list('amount', flat=True)
-    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
+    ex = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
+    try:
+        amount = functools.reduce(lambda a, b: a + b, ex)
+        if len(ex) > 0:
+            val = amount / len(ex)
+            return Response(data={"amount": val}, status=status.HTTP_200_OK)
+    except:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 # get all expenses @ given range
-#TODO
+# TODO
 @api_view(['POST'])
 def get_ex_filter_by_given_date(request):
     try:
         data = request.data['time_range']
-    except Exception as e:
-        return Response(data={"massage": "bad request","error":e}, status=status.HTTP_400_BAD_REQUEST)
+    except:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
-#graph data
 
+# graph data
+# TODO
 @api_view(['GET'])
 def analyze(request):
-    pass
+    typeIdSet = list(Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True))
+    uniqeval = set(typeIdSet)
+    for i in uniqeval:
+        Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
 
+    print(set(typeIdSet))
+    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
+
+
+
+# balance
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()
@@ -127,8 +151,8 @@ def analyze(request):
 #     return Response(data='success', status=status.HTTP_200_OK)
 
 # @action(detail=True, methods=['get'])
-    # def delT(self, request, *args, **kwargs):
-    #     # print(self.request.user)
-    #     # id = request.data['id']
-    #     # print(id)
-    #     return Response(data='success', status=status.HTTP_200_OK)
+# def delT(self, request, *args, **kwargs):
+#     # print(self.request.user)
+#     # id = request.data['id']
+#     # print(id)
+#     return Response(data='success', status=status.HTTP_200_OK)
