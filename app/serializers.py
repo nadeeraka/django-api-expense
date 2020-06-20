@@ -1,11 +1,18 @@
 from rest_framework import serializers
 from app import models
+from django.contrib.auth.models import User, Group
+
+
+class AppUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.AppUser
+        fields = ['username']
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.AppUser
-        fields = ['user', 'email']
+        model = User
+        exclude = ['password']
 
 
 class ExpenseSerializer(serializers.ModelSerializer):

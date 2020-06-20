@@ -132,6 +132,10 @@ def analyze(request):
     print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
+
+
+# balance
+
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()
 #     serializer_class = serializers.BalanceSerializer
