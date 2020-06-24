@@ -114,3 +114,4 @@ media/
 
 #cach
 api/__pycache__/
+api/.idea/
