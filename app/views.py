@@ -65,7 +65,8 @@ def get_balance(request):
     expenseArray = Expense.objects.filter(user_id=request.user.id) \
         .values_list('amount', flat=True)  # get only one field in list
     print(expenseArray)
-    incomeArray = Income.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
+    incomeArray = Income.objects.filter(
+        user_id=request.user.id).values_list('amount', flat=True)
     try:
         income = functools.reduce(lambda a, b: a + b, incomeArray)
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
@@ -80,7 +81,8 @@ def get_balance(request):
 
 @api_view(['GET'])
 def get_expense(request):
-    expense_array = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
+    expense_array = Expense.objects.filter(
+        user_id=request.user.id).values_list('amount', flat=True)
     try:
         expense = functools.reduce(lambda a, b: a + b, expense_array)
     except Exception as e:
@@ -91,7 +93,8 @@ def get_expense(request):
 @api_view(['GET'])
 def get_higest_Expense(request):
     value = 0
-    ex = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
+    ex = Expense.objects.filter(
+        user_id=request.user.id).values_list('amount', flat=True)
     for i in ex:
         if value < i:
             value = i
@@ -100,7 +103,8 @@ def get_higest_Expense(request):
 
 @api_view(['GET'])
 def get_ava_ex(request):
-    ex = Expense.objects.filter(user_id=request.user.id).values_list('amount', flat=True)
+    ex = Expense.objects.filter(
+        user_id=request.user.id).values_list('amount', flat=True)
     try:
         amount = functools.reduce(lambda a, b: a + b, ex)
         if len(ex) > 0:
@@ -120,26 +124,14 @@ def get_ex_filter_by_given_date(request):
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-# graph data
-# TODO
-@api_view(['GET'])
-def analyze(request):
-    typeIdSet = list(Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True))
-    # uniqeval = set(typeIdSet)
-    # for i in uniqeval:
-    #     Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
-
-    print(set(typeIdSet))
-    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
-
-
 # balance
 class Balance(APIView):
     def get(self):
         expenseArray = Expense.objects.filter(user_id=self.user.id) \
             .values_list('amount', flat=True)  # get only one field in list
         print(expenseArray)
-        incomeArray = Income.objects.filter(user_id=self.user.id).values_list('amount', flat=True)
+        incomeArray = Income.objects.filter(
+            user_id=self.user.id).values_list('amount', flat=True)
         try:
             income = functools.reduce(lambda a, b: a + b, incomeArray)
             expense = functools.reduce(lambda a, b: a + b, expenseArray)
@@ -150,6 +142,25 @@ class Balance(APIView):
         except Exception as e:
             return Response(data={"massage": "bad request", "error": e}, status=status.HTTP_400_BAD_REQUEST)
         return Response(data={"amount": balance}, status=status.HTTP_200_OK)
+
+
+# ################################# ###############################################
+###################################################################################
+# forcast
+####################################################################################
+
+# graph data
+# TODO
+@api_view(['GET'])
+def analyze(request):
+    typeIdSet = list(Expense.objects.filter(
+        user_id=request.user.id).values_list('expense_type', flat=True))
+    # uniqeval = set(typeIdSet)
+    # for i in uniqeval:
+    #     Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
+
+    print(set(typeIdSet))
+    return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()
@@ -171,3 +182,5 @@ class Balance(APIView):
 #     # id = request.data['id']
 #     # print(id)
 #     return Response(data='success', status=status.HTTP_200_OK)
+
+  
