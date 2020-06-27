@@ -57,7 +57,7 @@ class Saving(models.Model):
 
 class ExpenseType(models.Model):
     id = models.AutoField(primary_key=True)
-    selection_type = models.CharField(max_length=100)
+    selection_type = models.CharField(max_length=100,unique=True)
 
     class Meta:
         ordering = ['id']
@@ -65,7 +65,7 @@ class ExpenseType(models.Model):
 
 class SavingType(models.Model):
     id = models.AutoField(primary_key=True)
-    selection_type = models.CharField(max_length=100)
+    selection_type = models.CharField(max_length=100,unique=True)
 
     class Meta:
         ordering = ['id']
@@ -73,7 +73,7 @@ class SavingType(models.Model):
 
 class IncomeType(models.Model):
     id = models.AutoField(primary_key=True)
-    selection_type = models.CharField(max_length=100)
+    selection_type = models.CharField(max_length=100,unique=True)
 
     class Meta:
         ordering = ['id']
