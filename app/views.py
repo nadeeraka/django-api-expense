@@ -10,7 +10,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from app.models import Expense, Income
 import functools
-from app.util.index import getAva
+from app.util import count
+from app.helpers import saving_resolver
 
 
 # Create your views here.
@@ -67,6 +68,15 @@ class SavingViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
+    @action(detail=True, methods=['GET'])
+    def savings(self, request, pk=None, *args, **kwargs):
+        # ex = Expense.objects.filter(id=)
+        s = models.Saving.objects.all()
+        # savings = saving_resolver(s)
+        print(self.request.user)
+
+        return Response(data='ok')
+
 
 class FixedDepositViewSet(viewsets.ModelViewSet):
     queryset = models.FixedDeposit.objects.all()
@@ -75,12 +85,15 @@ class FixedDepositViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
+
 class LoanViewSet(viewsets.ModelViewSet):
     queryset = models.Loan.objects.all()
     serializer_class = serializers.LoanSerializer
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+# api views
 
 
 @api_view(['GET'])
@@ -89,10 +102,9 @@ def get_balance(request):
         .values_list('amount', flat=True)  # get only one field in list
     incomeArray = Income.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
-    if  len(expenseArray) == 0 or len(incomeArray) == 0 :
-        return Response(data={"balance":"000.000" }, status=status.HTTP_200_OK)
+    if len(expenseArray) == 0 or len(incomeArray) == 0:
+        return Response(data={"balance": "000.000"}, status=status.HTTP_200_OK)
 
-    
     try:
         income = functools.reduce(lambda a, b: a + b, incomeArray)
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
@@ -152,7 +164,7 @@ def get_ex_filter_by_given_date(request):
 
 # balance
 class Balance(APIView):
-    def get(self,request):
+    def get(self, request):
         print(self.request.user)
         expenseArray = Expense.objects.filter(user_id=self.user.id) \
             .values_list('amount', flat=True)  # get only one field in list
@@ -183,11 +195,10 @@ def analyze(request):
     typeIdSet = list(Expense.objects.filter(
         user_id=request.user.id).values_list('expense_type', flat=True))
     expenseArray = Expense.objects.filter(user_id=request.user.id) \
-            .values_list('amount', flat=True)  # get only one field in list
+        .values_list('amount', flat=True)  # get only one field in list
     print(expenseArray)
     incomeArray = Income.objects.filter(
-            user_id=request.user.id).values_list('amount', flat=True)
-    
+        user_id=request.user.id).values_list('amount', flat=True)
 
     # uniqeval = set(typeIdSet)
     # for i in uniqeval:
@@ -195,9 +206,6 @@ def analyze(request):
 
     print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
-
-
-
 
 
 # class BalanceViewSet(viewsets.ModelViewSet):
@@ -220,5 +228,3 @@ def analyze(request):
 #     # id = request.data['id']
 #     # print(id)
 #     return Response(data='success', status=status.HTTP_200_OK)
-
-  
