@@ -10,6 +10,7 @@ router.register(r'income', views.IncomeViewSet)
 router.register(r'incomeType', views.IncomeTypeViewSet)
 router.register(r'savings', views.SavingViewSet)
 router.register(r'fixedDeposit', views.FixedDepositViewSet)
+router.register(r'loan', views.LoanViewSet )
 
 # router.register(r'getBalance', views.get_balance.)
 

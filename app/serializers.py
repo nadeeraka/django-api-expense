@@ -53,3 +53,7 @@ class FixedDepositSerializer(serializers.ModelSerializer):
         model = models.FixedDeposit
         fields = '__all__'
 
+class LoanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Loan
+        fields = '__all__'

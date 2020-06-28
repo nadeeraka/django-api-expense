@@ -75,6 +75,14 @@ class FixedDepositViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
+class LoanViewSet(viewsets.ModelViewSet):
+    queryset = models.Loan.objects.all()
+    serializer_class = serializers.LoanSerializer
+    # permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
 @api_view(['GET'])
 def get_balance(request):
     expenseArray = Expense.objects.filter(user_id=request.user.id) \
