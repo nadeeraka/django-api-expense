@@ -20,6 +20,10 @@ class ExpenseSerializer(serializers.ModelSerializer):
         model = models.Expense
         fields = '__all__'
 
+class SavingeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Saving
+        fields = '__all__'
 
 class IncomeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -43,3 +47,9 @@ class ExpenseTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ExpenseType
         fields = '__all__'
+
+class FixedDepositSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.FixedDeposit
+        fields = '__all__'
+
