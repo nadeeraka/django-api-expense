@@ -64,11 +64,18 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
 def get_balance(request):
     expenseArray = Expense.objects.filter(user_id=request.user.id) \
         .values_list('amount', flat=True)  # get only one field in list
-    print(expenseArray)
     incomeArray = Income.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
+    if  len(expenseArray) == 0 or len(incomeArray) == 0 :
+        return Response(data={"balance":"000.000" }, status=status.HTTP_200_OK)
+
+    income = functools.reduce(lambda a, b: a + b, incomeArray)
+   
+    # print(expenseArray)
+    # if  len(expenseArray) == 0:
+    #     return Response(data={"amount":income }, status=status.HTTP_200_OK)
+
     try:
-        income = functools.reduce(lambda a, b: a + b, incomeArray)
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
         if income > expense:
             balance = income - expense
@@ -127,6 +134,7 @@ def get_ex_filter_by_given_date(request):
 # balance
 class Balance(APIView):
     def get(self,request):
+        print(self.request.user)
         expenseArray = Expense.objects.filter(user_id=self.user.id) \
             .values_list('amount', flat=True)  # get only one field in list
         print(expenseArray)
