@@ -126,7 +126,7 @@ def get_ex_filter_by_given_date(request):
 
 # balance
 class Balance(APIView):
-    def get(self):
+    def get(self,request):
         expenseArray = Expense.objects.filter(user_id=self.user.id) \
             .values_list('amount', flat=True)  # get only one field in list
         print(expenseArray)
