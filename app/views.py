@@ -60,13 +60,39 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
+class SavingViewSet(viewsets.ModelViewSet):
+    queryset = models.Saving.objects.all()
+    serializer_class = serializers.SavingeSerializer
+    # permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
+class FixedDepositViewSet(viewsets.ModelViewSet):
+    queryset = models.FixedDeposit.objects.all()
+    serializer_class = serializers.FixedDepositSerializer
+    # permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+class LoanViewSet(viewsets.ModelViewSet):
+    queryset = models.Loan.objects.all()
+    serializer_class = serializers.LoanSerializer
+    # permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
 @api_view(['GET'])
 def get_balance(request):
     expenseArray = Expense.objects.filter(user_id=request.user.id) \
         .values_list('amount', flat=True)  # get only one field in list
-    print(expenseArray)
     incomeArray = Income.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
+    if  len(expenseArray) == 0 or len(incomeArray) == 0 :
+        return Response(data={"balance":"000.000" }, status=status.HTTP_200_OK)
+
+    
     try:
         income = functools.reduce(lambda a, b: a + b, incomeArray)
         expense = functools.reduce(lambda a, b: a + b, expenseArray)
@@ -127,6 +153,7 @@ def get_ex_filter_by_given_date(request):
 # balance
 class Balance(APIView):
     def get(self,request):
+        print(self.request.user)
         expenseArray = Expense.objects.filter(user_id=self.user.id) \
             .values_list('amount', flat=True)  # get only one field in list
         print(expenseArray)
@@ -155,12 +182,23 @@ class Balance(APIView):
 def analyze(request):
     typeIdSet = list(Expense.objects.filter(
         user_id=request.user.id).values_list('expense_type', flat=True))
+    expenseArray = Expense.objects.filter(user_id=request.user.id) \
+            .values_list('amount', flat=True)  # get only one field in list
+    print(expenseArray)
+    incomeArray = Income.objects.filter(
+            user_id=request.user.id).values_list('amount', flat=True)
+    
+
     # uniqeval = set(typeIdSet)
     # for i in uniqeval:
     #     Expense.objects.filter(user_id=request.user.id).values_list('expense_type', flat=True)
 
     print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
+
+
+
+
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()
