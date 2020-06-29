@@ -6,8 +6,9 @@ from app.models import Saving
 def saving_resolver(savings: List[Saving]):
     pass
 
+# for 0ne year
 
-def saving_re(arg):
+def saving_reate(arg,t):
     saving_list = list(arg)
     if len(saving_list) == 0:
         return  -1

@@ -52,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../env" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -240,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593449024930</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="improve">
+      <created>1593450456245</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1593450456245</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,10 +280,10 @@
     </state>
     <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1593447955070" />
     <state x="461" y="158" width="424" height="485" key="FileChooserDialogImpl/0.32.1366.736@0.32.1366.736" timestamp="1591441435013" />
-    <state x="172" y="30" width="1022" height="731" key="SettingsEditor" timestamp="1593448958904">
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor" timestamp="1593456320895">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="172" y="30" width="1022" height="731" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1593448958904" />
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1593456320894" />
     <state x="172" y="35" width="1022" height="731" key="SettingsEditor/0.32.1366.736@0.32.1366.736" timestamp="1591441377873" />
     <state x="350" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1590138578962">
       <screen x="0" y="27" width="1360" height="741" />
