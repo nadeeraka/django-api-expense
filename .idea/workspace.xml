@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="improve" />
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="improve">
+      <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,8 +52,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../venv" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../env" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -258,13 +262,15 @@
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589711444535" />
-    <state x="461" y="158" width="424" height="485" key="FileChooserDialogImpl" timestamp="1591441435013">
-      <screen x="0" y="32" width="1366" height="736" />
+    <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl" timestamp="1593447955070">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1593447955070" />
     <state x="461" y="158" width="424" height="485" key="FileChooserDialogImpl/0.32.1366.736@0.32.1366.736" timestamp="1591441435013" />
-    <state x="172" y="35" width="1022" height="731" key="SettingsEditor" timestamp="1591441377873">
-      <screen x="0" y="32" width="1366" height="736" />
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor" timestamp="1593448958904">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1593448958904" />
     <state x="172" y="35" width="1022" height="731" key="SettingsEditor/0.32.1366.736@0.32.1366.736" timestamp="1591441377873" />
     <state x="350" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1590138578962">
       <screen x="0" y="27" width="1360" height="741" />
