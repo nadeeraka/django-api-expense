@@ -24,7 +24,7 @@ SECRET_KEY = 'b0=n5t!&*8!6s-!q+*zt!q#iv2+vz(7r7rovb2n=b@yu&fx0!w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -85,13 +85,19 @@ REST_FRAMEWORK = {
     ),
 }
 DJOSER = {
-    'LOGIN_FIELD':'email',
+    'LOGIN_FIELD': 'email',
+    'USER_CREATE_PASSWORD_RETYPE': 'True',
     # 'DOMAIN': 'frontend.com',
     # 'SITE_NAME': 'Frontend',
     # 'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
     # 'ACTIVATION_URL': '#/activate/{uid}/{token}',
     # 'SEND_ACTIVATION_EMAIL': True,
+    'SERIALIZERS': {
+        # 'user_create': 'app.serializers.UserCreateSerializer',
+        # 'user': 'app.serializers.UserCreateSerializer',
+    },
 }
+AUTH_USER_MODEL = "app.User"
 
 DATABASES = {
     'default': {

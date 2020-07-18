@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from djoser.serializers import UseUserCreateSerializer
 from app import models
 from django.contrib.auth.models import User, Group
 
@@ -7,7 +8,7 @@ class AppUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.AppUser
         fields = ['username']
-
+class UseUserCreateSerializer(serializers)
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
