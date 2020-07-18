@@ -1,7 +1,7 @@
 from django.urls import path, include
 from app import views
 from rest_framework import routers
-
+# url(r'^auth/', include('djoser.urls.authtoken')),
 router = routers.DefaultRouter()
 router.register(r'user', views.UserViewSet)
 router.register(r'expense', views.ExpenseViewSet)
@@ -16,12 +16,14 @@ router.register(r'loan', views.LoanViewSet )
 
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
+    path('', include('djoser.urls')),
+    path('', include('djoser.urls.authtoken')),
     path('balance', views.Balance.as_view()),
     # path('taktTime/', views.TaktTimeView.as_view()),
     path('ba', views.get_balance),
     path('ex', views.get_expense),
     path('h_ex', views.get_higest_Expense),
     path('ava_ex', views.get_ava_ex),
-    path('graph', views.analyze)
+    # path('graph', views.analyze)
 ]

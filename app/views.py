@@ -12,6 +12,7 @@ from app.models import Expense, Income
 import functools
 
 
+
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = models.User.objects.all()
