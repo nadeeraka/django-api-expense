@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="improve" />
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="improve">
+      <change afterPath="$PROJECT_DIR$/app/core/class/expenses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,8 +53,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../venv" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../env" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -230,7 +235,28 @@
       <option name="project" value="LOCAL" />
       <updated>1592643485733</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="improve">
+      <created>1593449024930</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1593449024930</updated>
+    </task>
+    <task id="LOCAL-00026" summary="improve">
+      <created>1593450456245</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1593450456245</updated>
+    </task>
+    <task id="LOCAL-00027" summary="improve">
+      <created>1593456424301</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1593456424301</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,25 +280,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="improve" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser/0.26.1366.742@0.26.1366.742" timestamp="1595059939520" />
     <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589711444535">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589711444535" />
-    <state x="461" y="158" width="424" height="485" key="FileChooserDialogImpl" timestamp="1591441435013">
-      <screen x="0" y="32" width="1366" height="736" />
+    <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl" timestamp="1593447955070">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1593447955070" />
     <state x="461" y="158" width="424" height="485" key="FileChooserDialogImpl/0.32.1366.736@0.32.1366.736" timestamp="1591441435013" />
-    <state x="172" y="35" width="1022" height="731" key="SettingsEditor" timestamp="1591441377873">
-      <screen x="0" y="32" width="1366" height="736" />
+    <state x="266" y="134" width="824" height="527" key="IDE.errors.dialog" timestamp="1593456558031">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="266" y="134" width="824" height="527" key="IDE.errors.dialog/0.27.1366.741@0.27.1366.741" timestamp="1593456558031" />
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor" timestamp="1593457501403">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1593457501403" />
     <state x="172" y="35" width="1022" height="731" key="SettingsEditor/0.32.1366.736@0.32.1366.736" timestamp="1591441377873" />
     <state x="350" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1590138578962">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="350" y="224" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1590138578962" />
+    <state x="118" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595061819819">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="118" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.26.1366.742@0.26.1366.742" timestamp="1595061819819" />
     <state x="454" y="315" width="448" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592643524473">
       <screen x="0" y="32" width="1366" height="736" />
     </state>
     <state x="454" y="315" width="448" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.32.1366.736@0.32.1366.736" timestamp="1592643524473" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593456794145">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1593456794145" />
   </component>
 </project>
