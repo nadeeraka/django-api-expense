@@ -6,7 +6,7 @@ import functools
 class Saving:
     def __init__(self,rate,amount,time):
         self.rate = rate
-        self.amount = amount
+        self.amount = amounttemp
         self.time = time  # time in month
 
 
