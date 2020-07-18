@@ -1,5 +1,4 @@
-import functools
-from app.helpers.functions import select_min, select_mx
+from app.helpers import util
 
 
 class Expenses:
@@ -10,10 +9,15 @@ class Expenses:
         self.expense = ex
 
     def calculate(self):
-        return functools.reduce(lambda x, y: x + y, self.expense)
+        return util.cal(self.expense)
 
     def max_ex(self):
-        return select_mx(self.expense)
+        return util.select_mx(self.expense)
 
     def min_ex(self):
-        return select_min(self.expense)
+        return util.select_min(self.expense)
+
+x =[1220,300,5678,378]
+ex = Expenses()
+ex.set_expense(x)
+print(ex.calculate())
