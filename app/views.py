@@ -132,13 +132,12 @@ def get_expense(request):
 
 @api_view(['GET'])
 def get_higest_Expense(request):
-    value = 0
     ex = Expense.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
-    for i in ex:
-        if value < i:
-            value = i
-    return Response(data={"amount": value}, status=status.HTTP_200_OK)
+    exe = expenses.Expenses()
+    exe.set_expense(ex)
+
+    return Response(data={"amount":  exe.calculate()}, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
