@@ -12,7 +12,7 @@ from app.models import Expense, Income
 import functools
 from app.util import count
 from app.helpers import saving_resolver
-from app.core import expenses
+from app.core import main
 
 
 # Create your views here.
@@ -124,20 +124,33 @@ def get_expense(request):
     expense_array = Expense.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
     try:
-        expense = functools.reduce(lambda a, b: a + b, expense_array)
+        value = main.Generics.calculate(expense_array)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
-    return Response(data={"amount": expense, }, status=status.HTTP_200_OK)
+    return Response(data={"amount": value, }, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 def get_higest_Expense(request):
-    ex = Expense.objects.filter(
+    try:
+        ex = Expense.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
-    exe = expenses.Expenses()
-    exe.set_expense(ex)
+        high = main.Generics.max_ex(ex)
 
-    return Response(data={"amount":  exe.calculate()}, status=status.HTTP_200_OK)
+        return Response(data={"amount":  high}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def get_minimun_Expense(request):
+    try:
+        ex = Expense.objects.filter(
+        user_id=request.user.id).values_list('amount', flat=True)
+        min = main.Generics.min_ex(ex)
+        return Response(data={"amount": min}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
