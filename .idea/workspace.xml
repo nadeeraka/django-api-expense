@@ -20,11 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="optymizing">
-      <change afterPath="$PROJECT_DIR$/app/core/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/savings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/expenses.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -277,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595141944627</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="optymizing">
+      <created>1595150290540</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1595150290540</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

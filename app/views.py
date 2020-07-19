@@ -104,8 +104,11 @@ def get_balance(request):
         .values_list('amount', flat=True)  # get only one field in list
     incomeArray = Income.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
-    if len(expenseArray) == 0 or len(incomeArray) == 0:
-        return Response(data={"balance": "000.000"}, status=status.HTTP_200_OK)
+    if len(incomeArray) ==0:
+        return Response(data={"balance": '000,00'}, status=status.HTTP_200_OK)
+
+    if len(expenseArray) == 0:
+        return Response(data={"balance": incomeArray}, status=status.HTTP_200_OK)
 
     try:
         income = functools.reduce(lambda a, b: a + b, incomeArray)
