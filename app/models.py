@@ -9,7 +9,7 @@ from django.db import models
 class AppUser(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='app_user')
-    email = models.EmailField()
+    email = models.EmailField(unique=True, max_length=225)
 
 
 class Income(models.Model):
@@ -57,7 +57,7 @@ class Saving(models.Model):
 
 class ExpenseType(models.Model):
     id = models.AutoField(primary_key=True)
-    selection_type = models.CharField(max_length=100,unique=True)
+    selection_type = models.CharField(max_length=100, unique=True)
 
     class Meta:
         ordering = ['id']
@@ -65,7 +65,7 @@ class ExpenseType(models.Model):
 
 class SavingType(models.Model):
     id = models.AutoField(primary_key=True)
-    selection_type = models.CharField(max_length=100,unique=True)
+    selection_type = models.CharField(max_length=100, unique=True)
 
     class Meta:
         ordering = ['id']
@@ -73,17 +73,18 @@ class SavingType(models.Model):
 
 class IncomeType(models.Model):
     id = models.AutoField(primary_key=True)
-    selection_type = models.CharField(max_length=100,unique=True)
+    selection_type = models.CharField(max_length=100, unique=True)
 
     class Meta:
         ordering = ['id']
+
 
 # class LoanType(models.Model):
 #     id = models.AutoField(primary_key=True)
 #     selection_type = models.CharField(max_length=100,unique=True)
 
-    # class Meta:
-    #     ordering = ['id']
+# class Meta:
+#     ordering = ['id']
 
 class FixedDeposit(models.Model):
     id = models.AutoField(primary_key=True)
@@ -94,6 +95,7 @@ class FixedDeposit(models.Model):
     rate = models.DecimalField(max_digits=100, decimal_places=4, default=0)
     beneficial_time = models.DateField()
 
+
 class Loan(models.Model):
     id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -102,8 +104,6 @@ class Loan(models.Model):
     created_time = models.DateTimeField(default=datetime.now, blank=True)
     rate = models.DecimalField(max_digits=100, decimal_places=4, default=0)
     due_time = models.DateField()
-
-
 
 # class Balance(models.Model):
 #     id = models.AutoField(primary_key=True)

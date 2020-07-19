@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="improve">
-      <change afterPath="$PROJECT_DIR$/app/core/class/expenses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/class/expenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/expenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
