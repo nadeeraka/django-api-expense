@@ -1,31 +1,15 @@
 import functools
 
-import django
-
 
 def valdate(x):
     if x is not None:
-        print(type(x))
         if type(x) == int:
             if x > 0:
-                return True
-            else:
-                return 0
+                return True;
         elif type(x) == list:
             if len(x) > 0:
                 return True
-            else:
-                return []
-        if type(x) == django.db.models.query.QuerySet:
-            return True
-
     return False
-
-
-def calculate(arr):
-    if not valdate(arr):
-        return False
-    return functools.reduce(lambda x, y: x + y, arr)
 
 
 def select_mx(arr):
@@ -46,7 +30,16 @@ def select_min(arr):
     return x
 
 
-def average(arr):
+def cal(arr):
     if not valdate(arr):
         return False
-    return calculate(arr) / len(arr)
+
+    return functools.reduce(lambda x, y: x + y, arr)
+
+
+def average(array):
+    if not valdate(array):
+        return False
+
+    if cal(array) > 0:
+        return cal(array) / len(array)

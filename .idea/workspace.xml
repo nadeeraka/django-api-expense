@@ -19,7 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="optymizing">
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="improve">
+      <change afterPath="$PROJECT_DIR$/app/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/class/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/temp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/temp/saving_resolver/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/class/expenses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/class/expenses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/request.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/temp/saving_resolver/saving_resolver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/util.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +60,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../env" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/core/class" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/core/class" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/core" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/helpers" />
+      <recent name="$PROJECT_DIR$/app/temp" />
+      <recent name="$PROJECT_DIR$/app/helpers/utils" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -258,28 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593456424301</updated>
     </task>
-    <task id="LOCAL-00028" summary="setings modified">
-      <created>1595139316286</created>
+    <task id="LOCAL-00028" summary="improve">
+      <created>1595066577125</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1595139316286</updated>
+      <updated>1595066577125</updated>
     </task>
-    <task id="LOCAL-00029" summary="optymizing">
-      <created>1595141944627</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1595141944627</updated>
-    </task>
-    <task id="LOCAL-00030" summary="optymizing">
-      <created>1595150290540</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1595150290540</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,9 +302,7 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="helpers add" />
     <MESSAGE value="improve" />
-    <MESSAGE value="setings modified" />
-    <MESSAGE value="optymizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="optymizing" />
+    <option name="LAST_COMMIT_MESSAGE" value="improve" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">
@@ -327,6 +327,10 @@
     </state>
     <state x="172" y="30" width="1022" height="731" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1593457501403" />
     <state x="172" y="35" width="1022" height="731" key="SettingsEditor/0.32.1366.736@0.32.1366.736" timestamp="1591441377873" />
+    <state x="279" y="131" key="Vcs.Push.Dialog.v2" timestamp="1595066639480">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="279" y="131" key="Vcs.Push.Dialog.v2/0.26.1366.742@0.26.1366.742" timestamp="1595066639480" />
     <state x="350" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1590138578962">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
