@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="" />
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="optymizing">
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,15 +34,29 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bymgK0kTHdFFVg9o98mpYLxn76" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../env" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/core" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,6 +69,279 @@
       <option name="presentableId" value="Default" />
       <updated>1589612817285</updated>
     </task>
+    <task id="LOCAL-00001" summary="views models urls update">
+      <created>1589614590787</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589614590787</updated>
+    </task>
+    <task id="LOCAL-00002" summary="views models urls update">
+      <created>1589615860094</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589615860094</updated>
+    </task>
+    <task id="LOCAL-00003" summary="views models urls update">
+      <created>1589616226243</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589616226243</updated>
+    </task>
+    <task id="LOCAL-00004" summary="views models urls update">
+      <created>1589625193723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589625193723</updated>
+    </task>
+    <task id="LOCAL-00005" summary="views models urls update">
+      <created>1589630733610</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589630733610</updated>
+    </task>
+    <task id="LOCAL-00006" summary="views models urls update">
+      <created>1589634246158</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1589634246158</updated>
+    </task>
+    <task id="LOCAL-00007" summary="views models urls update">
+      <created>1589634280583</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589634280583</updated>
+    </task>
+    <task id="LOCAL-00008" summary="views models urls update">
+      <created>1589636002671</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589636002671</updated>
+    </task>
+    <task id="LOCAL-00009" summary="views models urls update">
+      <created>1589636656312</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589636656312</updated>
+    </task>
+    <task id="LOCAL-00010" summary="views models urls update">
+      <created>1589640831281</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589640831281</updated>
+    </task>
+    <task id="LOCAL-00011" summary="views models urls update">
+      <created>1589640859121</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1589640859121</updated>
+    </task>
+    <task id="LOCAL-00012" summary="views models urls update">
+      <created>1589642103087</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1589642103087</updated>
+    </task>
+    <task id="LOCAL-00013" summary="views models urls update">
+      <created>1589643149516</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589643149516</updated>
+    </task>
+    <task id="LOCAL-00014" summary="views models urls update">
+      <created>1589647005456</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1589647005456</updated>
+    </task>
+    <task id="LOCAL-00015" summary="views models urls update">
+      <created>1589648959767</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589648959767</updated>
+    </task>
+    <task id="LOCAL-00016" summary="views models urls update">
+      <created>1589656455613</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1589656455613</updated>
+    </task>
+    <task id="LOCAL-00017" summary="bug fix">
+      <created>1589691890314</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1589691890314</updated>
+    </task>
+    <task id="LOCAL-00018" summary="helpers add">
+      <created>1589692670583</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589692670583</updated>
+    </task>
+    <task id="LOCAL-00019" summary="helpers add">
+      <created>1589709562177</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589709562177</updated>
+    </task>
+    <task id="LOCAL-00020" summary="helpers add">
+      <created>1589711444759</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589711444759</updated>
+    </task>
+    <task id="LOCAL-00021" summary="helpers add">
+      <created>1591441777689</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591441777689</updated>
+    </task>
+    <task id="LOCAL-00022" summary="helpers add">
+      <created>1591448426520</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591448426520</updated>
+    </task>
+    <task id="LOCAL-00023" summary="improve">
+      <created>1592633903547</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1592633903547</updated>
+    </task>
+    <task id="LOCAL-00024" summary="improve">
+      <created>1592643485733</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1592643485733</updated>
+    </task>
+    <task id="LOCAL-00025" summary="improve">
+      <created>1593449024930</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1593449024930</updated>
+    </task>
+    <task id="LOCAL-00026" summary="improve">
+      <created>1593450456245</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1593450456245</updated>
+    </task>
+    <task id="LOCAL-00027" summary="improve">
+      <created>1593456424301</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1593456424301</updated>
+    </task>
+    <task id="LOCAL-00028" summary="setings modified">
+      <created>1595139316286</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1595139316286</updated>
+    </task>
+    <task id="LOCAL-00029" summary="optymizing">
+      <created>1595141944627</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1595141944627</updated>
+    </task>
+    <task id="LOCAL-00030" summary="optymizing">
+      <created>1595150290540</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1595150290540</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="views models urls update" />
+    <MESSAGE value="bug fix" />
+    <MESSAGE value="helpers add" />
+    <MESSAGE value="improve" />
+    <MESSAGE value="setings modified" />
+    <MESSAGE value="optymizing" />
+    <option name="LAST_COMMIT_MESSAGE" value="optymizing" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser/0.26.1366.742@0.26.1366.742" timestamp="1595059939520" />
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2" timestamp="1589711444535">
+      <screen x="0" y="27" width="1360" height="741" />
+    </state>
+    <state x="232" y="27" width="886" height="741" key="CommitChangelistDialog2/0.27.1360.741@0.27.1360.741" timestamp="1589711444535" />
+    <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl" timestamp="1593447955070">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="461" y="154" width="424" height="485" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1593447955070" />
+    <state x="461" y="158" width="424" height="485" key="FileChooserDialogImpl/0.32.1366.736@0.32.1366.736" timestamp="1591441435013" />
+    <state x="266" y="134" width="824" height="527" key="IDE.errors.dialog" timestamp="1593456558031">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="266" y="134" width="824" height="527" key="IDE.errors.dialog/0.27.1366.741@0.27.1366.741" timestamp="1593456558031" />
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor" timestamp="1593457501403">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="172" y="30" width="1022" height="731" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1593457501403" />
+    <state x="172" y="35" width="1022" height="731" key="SettingsEditor/0.32.1366.736@0.32.1366.736" timestamp="1591441377873" />
+    <state x="350" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1590138578962">
+      <screen x="0" y="27" width="1360" height="741" />
+    </state>
+    <state x="350" y="224" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1590138578962" />
+    <state x="118" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595061819819">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="118" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.26.1366.742@0.26.1366.742" timestamp="1595061819819" />
+    <state x="454" y="315" width="448" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592643524473">
+      <screen x="0" y="32" width="1366" height="736" />
+    </state>
+    <state x="454" y="315" width="448" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.32.1366.736@0.32.1366.736" timestamp="1592643524473" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593456794145">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1593456794145" />
   </component>
 </project>
