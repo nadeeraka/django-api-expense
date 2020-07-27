@@ -59,6 +59,14 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
+# class InHand(viewsets.ModelViewSet):
+#     queryset = models.InHand.objects.all()
+#     serializer_class = serializers.InHand
+#     # permission_classes = [IsAuthenticated]
+#     permission_classes = (permissions.AllowAny,)
+#     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
 class SavingViewSet(viewsets.ModelViewSet):
     queryset = models.Saving.objects.all()
     serializer_class = serializers.SavingeSerializer
@@ -90,6 +98,7 @@ class LoanViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
 
 # api views
 
@@ -204,7 +213,6 @@ def analyze(request):
 
     print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
-
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()

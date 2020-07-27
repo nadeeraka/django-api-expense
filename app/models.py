@@ -106,16 +106,16 @@ class Loan(models.Model):
     due_time = models.DateField()
 
 
-class InHand(models.Model):
-    id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="in_hand")
-    note = models.CharField(max_length=100, blank=True)
-    amount = models.DecimalField(max_digits=100, decimal_places=4, default=0)
-    created_time = models.DateTimeField(default=datetime.now, blank=True)
-    update_time = models.DateTimeField(default=datetime.now, blank=True)
-
-    class Meta:
-        ordering = ['id']
+# class InHand(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="in_hand")
+#     note = models.CharField(max_length=100, blank=True)
+#     amount = models.DecimalField(max_digits=100, decimal_places=4, default=0)
+#     created_time = models.DateTimeField(default=datetime.now, blank=True)
+#     update_time = models.DateTimeField(default=datetime.now, blank=True)
+#
+#     class Meta:
+#         ordering = ['id']
 
 # class Balance(models.Model):
 #     id = models.AutoField(primary_key=True)

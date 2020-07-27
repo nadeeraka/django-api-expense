@@ -63,7 +63,7 @@ class LoanSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class InHand(serializers.ModelSerializer):
-    class Meta:
-        model = models.InHand
-        fields = '__all__'
+# class InHand(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.InHand
+#         exclude = ['created_time']
