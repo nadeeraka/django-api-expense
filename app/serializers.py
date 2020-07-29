@@ -21,9 +21,15 @@ class ExpenseSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class SavingeSerializer(serializers.ModelSerializer):
+class SavingSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Saving
+        fields = '__all__'
+
+
+class SavingTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.SavingType
         fields = '__all__'
 
 
@@ -61,7 +67,6 @@ class LoanSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Loan
         fields = '__all__'
-
 
 # class InHand(serializers.ModelSerializer):
 #     class Meta:

@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="refactore">
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="savings modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/savings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/savings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596013237578</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="savings modified">
+      <created>1596023532643</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1596023532643</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,7 +356,8 @@
     <MESSAGE value="bug fixed" />
     <MESSAGE value="inHand add to serializer" />
     <MESSAGE value="refactore" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactore" />
+    <MESSAGE value="savings modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="savings modified" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">

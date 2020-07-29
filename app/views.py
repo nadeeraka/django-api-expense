@@ -62,9 +62,17 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
+class SavingTypeViewSet(viewsets.ModelViewSet):
+    queryset = models.SavingType.objects.all()
+    serializer_class = serializers.SavingTypeSerializer
+    # permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
 class SavingViewSet(viewsets.ModelViewSet):
     queryset = models.Saving.objects.all()
-    serializer_class = serializers.SavingeSerializer
+    serializer_class = serializers.SavingSerializer
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
@@ -104,7 +112,7 @@ def get_balance(request):
         .values_list('amount', flat=True)  # get only one field in list
     incomeArray = Income.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
-    if len(incomeArray) ==0:
+    if len(incomeArray) == 0:
         return Response(data={"balance": '000,00'}, status=status.HTTP_200_OK)
 
     if len(expenseArray) == 0:
@@ -137,10 +145,10 @@ def get_expense(request):
 def get_higest_Expense(request):
     try:
         ex = Expense.objects.filter(
-        user_id=request.user.id).values_list('amount', flat=True)
+            user_id=request.user.id).values_list('amount', flat=True)
         high = main.Generics.max_ex(ex)
 
-        return Response(data={"amount":  high}, status=status.HTTP_200_OK)
+        return Response(data={"amount": high}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -149,7 +157,18 @@ def get_higest_Expense(request):
 def get_minimun_Expense(request):
     try:
         ex = Expense.objects.filter(
-        user_id=request.user.id).values_list('amount', flat=True)
+            user_id=request.user.id).values_list('amount', flat=True)
+        min = main.Generics.min_ex(ex)
+        return Response(data={"amount": min}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def get_normal_savings(request):
+    try:
+        ex = Expense.objects.filter(
+            user_id=request.user.id).values_list('amount', flat=True)
         min = main.Generics.min_ex(ex)
         return Response(data={"amount": min}, status=status.HTTP_200_OK)
     except Exception as e:
