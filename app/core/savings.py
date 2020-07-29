@@ -1,13 +1,8 @@
-class Savings:
-    # 24 -> 8.25 %
-    # 36 -> 8.50%
-    # 48 -> 9.00
 
-    def __init__(self):
-        pass
+from app.helpers.saving_resolver.index import calculate_savings, calculate_saving_algo
 
-    def fixed_savings_for_full_year(self, rate,months ):
-        pass
 
-    def normal_savings(self):
-        pass
+class Saving:
+
+    def get_normal_savings(self, amount_array, months):
+        return calculate_savings(self, amount_array, months)
