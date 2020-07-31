@@ -8,11 +8,12 @@ from rest_framework import filters, pagination
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import status
-from app.models import Expense, Income
+from app.models import Expense, Income ,Saving
 import functools
 from app.util import count
 from app.helpers import saving_resolver
 from app.core import main
+from app.helpers.saving_resolver.index import calculate_savings
 
 
 # Create your views here.
@@ -160,17 +161,22 @@ def get_minimun_Expense(request):
             user_id=request.user.id).values_list('amount', flat=True)
         min = main.Generics.min_ex(ex)
         return Response(data={"amount": min}, status=status.HTTP_200_OK)
-    except Exception as e:
+    except:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
 def get_normal_savings(request):
+    savings_array = Saving.objects.filter(
+        user_id=request.user.id).values('amount','created_time')
+    # savings = calculate_savings(savings_array)
+    print(savings_array)
     try:
-        ex = Expense.objects.filter(
+        savings_array = Saving.objects.filter(
             user_id=request.user.id).values_list('amount', flat=True)
-        min = main.Generics.min_ex(ex)
-        return Response(data={"amount": min}, status=status.HTTP_200_OK)
+        savings = calculate_savings(savings_array)
+        print(savings_array)
+        return Response(data={"amount": savings}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 

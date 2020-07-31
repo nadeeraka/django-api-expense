@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="savings modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/savings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/savings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/saving_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/saving_resolver/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596024464815</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="savings modified">
+      <created>1596036513871</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1596036513871</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

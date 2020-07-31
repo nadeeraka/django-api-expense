@@ -22,6 +22,7 @@ urlpatterns = [
     path('balance', views.Balance.as_view()),
     # path('taktTime/', views.TaktTimeView.as_view()),
     path('ba', views.get_balance),
+    path('sa', views.get_normal_savings),
     path('ex', views.get_expense),
     path('h_ex', views.get_higest_Expense),
     path('ava_ex', views.get_ava_ex),
