@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="savings modified">
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="more modification add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -344,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596036513871</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="more modification add">
+      <created>1596180709618</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1596180709618</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,7 +376,8 @@
     <MESSAGE value="inHand add to serializer" />
     <MESSAGE value="refactore" />
     <MESSAGE value="savings modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="savings modified" />
+    <MESSAGE value="more modification add" />
+    <option name="LAST_COMMIT_MESSAGE" value="more modification add" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">

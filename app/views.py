@@ -168,7 +168,7 @@ def get_minimun_Expense(request):
 @api_view(['GET'])
 def get_normal_savings(request):
     savings_array = Saving.objects.filter(
-        user_id=request.user.id).values('amount','created_time')
+        user_id=request.user.id).filter(selection_id =1).values()
     # savings = calculate_savings(savings_array)
     print(savings_array)
     try:
