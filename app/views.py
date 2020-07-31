@@ -12,9 +12,7 @@ from app.models import Expense, Income ,Saving
 import functools
 from app.util import count
 from app.helpers import saving_resolver
-from app.core import main
-from app.helpers.saving_resolver.index import calculate_savings
-
+from app.core import main,normal_savings
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
@@ -168,13 +166,13 @@ def get_minimun_Expense(request):
 @api_view(['GET'])
 def get_normal_savings(request):
     savings_array = Saving.objects.filter(
-        user_id=request.user.id).filter(selection_id =1).values()
-    # savings = calculate_savings(savings_array)
-    print(savings_array)
+        user_id=request.user.id).filter(selection_id =1).values_list('amount', flat=True)
+    savings = normal_savings.Saving_resolver.get_normal_savings(savings_array,12)
+    print(savings)
     try:
         savings_array = Saving.objects.filter(
             user_id=request.user.id).values_list('amount', flat=True)
-        savings = calculate_savings(savings_array)
+
         print(savings_array)
         return Response(data={"amount": savings}, status=status.HTTP_200_OK)
     except Exception as e:

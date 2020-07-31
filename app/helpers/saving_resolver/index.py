@@ -4,17 +4,20 @@ import functools
 from app.helpers.util import calculate
 
 
-def calculate_saving_algo(self, amount):
-    rate = 0
+def calculate_saving_algo(amount):
     if amount < 50000:
-        rate = 3
+        return 3 * amount
     elif 499999.99 < amount > 50000:
-        rate = 4
+        return 4 * amount
     elif amount > 499999.99:
-        rate = 5
-    return rate * amount
+        return 5 * amount
 
 
-def calculate_savings(self, amount_array, months):
+def calculate_savings(amount_array, months):
     amount = calculate(amount_array)
-    return self.calculate_saving_algo(amount) / months
+    print('amount', amount)
+    val = calculate_saving_algo(amount) / months
+    print('with rate', val)
+    full_amount = val + amount
+    print('full amount', full_amount)
+    return full_amount

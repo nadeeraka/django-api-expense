@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="more modification add">
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="normal saving action modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/savings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/normal_savings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/saving_resolver/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -349,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596180709618</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="normal saving action modified">
+      <created>1596182538604</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1596182538604</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,7 +386,8 @@
     <MESSAGE value="refactore" />
     <MESSAGE value="savings modified" />
     <MESSAGE value="more modification add" />
-    <option name="LAST_COMMIT_MESSAGE" value="more modification add" />
+    <MESSAGE value="normal saving action modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="normal saving action modified" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">
