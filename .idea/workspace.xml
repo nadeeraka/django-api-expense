@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="bug fixed">
+    <list default="true" id="040423f3-3cde-4877-ab09-c3b6240e98bf" name="Default Changelist" comment="normal saving action modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/saving_resolver/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/saving_resolver/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bymgK0kTHdFFVg9o98mpYLxn76" />
@@ -55,6 +61,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/helpers" />
       <recent name="$PROJECT_DIR$/app/core" />
     </key>
   </component>
@@ -279,7 +286,84 @@
       <option name="project" value="LOCAL" />
       <updated>1595150290540</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="bug fixed">
+      <created>1595848650004</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1595848650004</updated>
+    </task>
+    <task id="LOCAL-00032" summary="inHand add to serializer">
+      <created>1595848829313</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1595848829313</updated>
+    </task>
+    <task id="LOCAL-00033" summary="refactore">
+      <created>1595850178070</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1595850178070</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactore">
+      <created>1595850357408</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1595850357408</updated>
+    </task>
+    <task id="LOCAL-00035" summary="refactore">
+      <created>1596013237578</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1596013237578</updated>
+    </task>
+    <task id="LOCAL-00036" summary="savings modified">
+      <created>1596023532643</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1596023532643</updated>
+    </task>
+    <task id="LOCAL-00037" summary="savings modified">
+      <created>1596024464815</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1596024464815</updated>
+    </task>
+    <task id="LOCAL-00038" summary="savings modified">
+      <created>1596036513871</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1596036513871</updated>
+    </task>
+    <task id="LOCAL-00039" summary="more modification add">
+      <created>1596180709618</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1596180709618</updated>
+    </task>
+    <task id="LOCAL-00040" summary="normal saving action modified">
+      <created>1596182538604</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1596182538604</updated>
+    </task>
+    <task id="LOCAL-00041" summary="normal saving action modified">
+      <created>1596194819229</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1596194819229</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,7 +386,13 @@
     <MESSAGE value="improve" />
     <MESSAGE value="setings modified" />
     <MESSAGE value="optymizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="optymizing" />
+    <MESSAGE value="bug fixed" />
+    <MESSAGE value="inHand add to serializer" />
+    <MESSAGE value="refactore" />
+    <MESSAGE value="savings modified" />
+    <MESSAGE value="more modification add" />
+    <MESSAGE value="normal saving action modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="normal saving action modified" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595059939520">

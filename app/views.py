@@ -8,9 +8,11 @@ from rest_framework import filters, pagination
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import status
-from app.models import Expense, Income
+from app.models import Expense, Income ,Saving
 import functools
-
+from app.util import count
+from app.helpers import saving_resolver
+from app.core import main,normal_savings
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
@@ -59,9 +61,17 @@ class ExpenseTypeViewSet(viewsets.ModelViewSet):
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
 
+class SavingTypeViewSet(viewsets.ModelViewSet):
+    queryset = models.SavingType.objects.all()
+    serializer_class = serializers.SavingTypeSerializer
+    # permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    pagination.PageNumberPagination.page_size_query_param = 'page_size'
+
+
 class SavingViewSet(viewsets.ModelViewSet):
     queryset = models.Saving.objects.all()
-    serializer_class = serializers.SavingeSerializer
+    serializer_class = serializers.SavingSerializer
     # permission_classes = [IsAuthenticated]
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
@@ -91,6 +101,7 @@ class LoanViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination.PageNumberPagination.page_size_query_param = 'page_size'
 
+
 # api views
 
 
@@ -100,8 +111,11 @@ def get_balance(request):
         .values_list('amount', flat=True)  # get only one field in list
     incomeArray = Income.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
-    if len(expenseArray) == 0 or len(incomeArray) == 0:
-        return Response(data={"balance": "000.000"}, status=status.HTTP_200_OK)
+    if len(incomeArray) == 0:
+        return Response(data={"balance": '000,00'}, status=status.HTTP_200_OK)
+
+    if len(expenseArray) == 0:
+        return Response(data={"balance": incomeArray}, status=status.HTTP_200_OK)
 
     try:
         income = functools.reduce(lambda a, b: a + b, incomeArray)
@@ -120,21 +134,49 @@ def get_expense(request):
     expense_array = Expense.objects.filter(
         user_id=request.user.id).values_list('amount', flat=True)
     try:
-        expense = functools.reduce(lambda a, b: a + b, expense_array)
+        value = main.Generics.calculate(expense_array)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
-    return Response(data={"amount": expense, }, status=status.HTTP_200_OK)
+    return Response(data={"amount": value, }, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 def get_higest_Expense(request):
-    value = 0
-    ex = Expense.objects.filter(
-        user_id=request.user.id).values_list('amount', flat=True)
-    for i in ex:
-        if value < i:
-            value = i
-    return Response(data={"amount": value}, status=status.HTTP_200_OK)
+    try:
+        ex = Expense.objects.filter(
+            user_id=request.user.id).values_list('amount', flat=True)
+        high = main.Generics.max_ex(ex)
+
+        return Response(data={"amount": high}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def get_minimun_Expense(request):
+    try:
+        ex = Expense.objects.filter(
+            user_id=request.user.id).values_list('amount', flat=True)
+        min = main.Generics.min_ex(ex)
+        return Response(data={"amount": min}, status=status.HTTP_200_OK)
+    except:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def get_normal_savings(request):
+    savings_array = Saving.objects.filter(
+        user_id=request.user.id).filter(selection_id =1).values_list('amount', flat=True)
+    savings = normal_savings.Saving_resolver.get_normal_savings(savings_array,12)
+    print(savings)
+    try:
+        savings_array = Saving.objects.filter(
+            user_id=request.user.id).values_list('amount', flat=True)
+
+        print(savings_array)
+        return Response(data={"amount": savings}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -204,7 +246,6 @@ def analyze(request):
 
     print(set(typeIdSet))
     return Response(data={"amount": 'value'}, status=status.HTTP_200_OK)
-
 
 # class BalanceViewSet(viewsets.ModelViewSet):
 #     queryset = Balance.objects.all()

@@ -22,7 +22,7 @@ def valdate(x):
     return False
 
 
-def calculate(arr):
+def calculate(arr=[]):
     if not valdate(arr):
         return False
     return functools.reduce(lambda x, y: x + y, arr)
