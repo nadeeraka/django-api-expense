@@ -4,11 +4,12 @@ import functools
 from app.helpers.util import calculate
 
 
-def calculate_saving_algo(amount_in_int):
-    amount_in_int = int(amount_in_int)
+def calculate_saving_algo(amount):
+
+    amount_in_int = int(amount)
     if amount_in_int < 50000:
         return 3 * amount_in_int
-    elif 499999 < amount_in_int > 50000:
+    elif 500000 < amount_in_int > 50000:
         print('called')
         return 4 * amount_in_int
     elif amount_in_int > 500000:
