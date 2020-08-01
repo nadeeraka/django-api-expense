@@ -165,15 +165,10 @@ def get_minimun_Expense(request):
 
 @api_view(['GET'])
 def get_normal_savings(request):
-    savings_array = Saving.objects.filter(
-        user_id=request.user.id).filter(selection_id =1).values_list('amount', flat=True)
-    savings = normal_savings.Saving_resolver.get_normal_savings(savings_array,12)
-    print(savings)
     try:
         savings_array = Saving.objects.filter(
-            user_id=request.user.id).values_list('amount', flat=True)
-
-        print(savings_array)
+            user_id=request.user.id).filter(selection_id=1).values_list('amount', flat=True)
+        savings = normal_savings.Saving_resolver.get_normal_savings(savings_array, 12)
         return Response(data={"amount": savings}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response(data={"massage": "bad request"}, status=status.HTTP_400_BAD_REQUEST)
