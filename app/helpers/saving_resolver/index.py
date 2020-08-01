@@ -4,24 +4,31 @@ import functools
 from app.helpers.util import calculate
 
 
-def calculate_saving_algo(amount):
+def cal_rate(amount, rate):
+    return (amount * rate) / 100
 
-    amount_in_int = int(amount)
-    if amount_in_int < 50000:
-        return 3 * amount_in_int
-    elif 500000 < amount_in_int > 50000:
-        print('called')
-        return 4 * amount_in_int
-    elif amount_in_int > 500000:
-        return 5 * amount_in_int
-    return amount_in_int
+
+def calculate_saving_algo(amount):
+    if amount < 50000:
+        return cal_rate(amount, 3)
+    if 50000 < amount < 500000:
+        return cal_rate(amount, 4)
+    if amount > 500000:
+        return cal_rate(amount, 5)
+    return 0
 
 
 def calculate_savings(amount_array, months):
     amount = calculate(amount_array)
     print('amount', amount)
-    val = calculate_saving_algo(amount)
+    val = calculate_saving_algo(amount) / months
     print('with rate', val)
     full_amount = val + amount
     print('full amount', full_amount)
-    return full_amount
+    return round(full_amount, 2)
+
+
+def get_only_rate(amount_array, months):
+    amount = calculate(amount_array)
+    print('amount', amount)
+    return calculate_saving_algo(amount) / months
